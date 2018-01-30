@@ -34,7 +34,7 @@ This file translates client string types to their equivalent shell commands
 ```
 player/commands.js
 ```
-#### tree.js
+## tree.js
 This file takes a starting directory and creates a JSON object representing it's hierarchy recursively, consisting of nested object-arrays.
 ```
 tree.js
