@@ -65,7 +65,7 @@ public/scripts/traverse.js
 - This contain the logic that traverses the JS object that shadows the filesystem.
 - includes functions to create HTML elements and place them in a container. 
 - responsible for requesting the file to be played at the server.
-- keep search history in localstorage.
+- keep search history in local storage of your browser.
 ```
 public/scripts/client.js
 ```
@@ -75,7 +75,7 @@ public/scripts/client.js
 ```
 player/vlc.js
 ```
-- This file spawn a child process to launch vlc on server on a separate thread
+- This file spawns a child process to launch vlc on server on a separate thread
 ```
 player/vlc_config.js
 ```
