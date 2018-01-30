@@ -1,19 +1,10 @@
 # liquiwave
 
-glorified audio remote for a server.
-
-## Getting Started
-
-
-
-### Prerequisites
-
-raspberry pi
-vlc player
-
+## app.js
 ```
-Give examples
+const port = [port]; // declare the port you want to use at local ip
 ```
-
-
-
+Start the server and declare route using:
+```
+node app.js
+```
