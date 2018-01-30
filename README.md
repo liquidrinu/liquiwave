@@ -16,8 +16,8 @@ nano player/vlc.js
 ```
 ```js
 // different port than above!!
-const vlcPort = "7331"; 
-const vlcPasswd = "secret";
+const vlcPort = 7331
+const vlcPasswd = "secret"
 ```
 #### install dependencies
 ```
