@@ -14,7 +14,7 @@ local webclient to listen to audio, either from local filesystem or through say 
 
 ## Installation
 
-Clone repo then..
+Clone repo then cd into it..
 #### install dependencies
 ```
 npm install
