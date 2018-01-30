@@ -44,8 +44,9 @@ nano tree.js
 ```
 Enter path
 ```js
-const local = "your path to local directory"
+const local = "/your/path/to/local/directory"
 ```
+###### absolute path preferred
 Execute
 ```
 node tree.js
