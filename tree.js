@@ -2,7 +2,10 @@
 const fs = require('fs');
 const dirTree = require('directory-tree');
 
-const f_tree = dirTree('/home/media/_AUDIO_');
+// Main local Directory
+const local = '/home/media/_AUDIO_';
+
+const f_tree = dirTree(local);
 
 var promise1 = new Promise(function (resolve, reject) {
     const dataTree = f_tree;
@@ -14,5 +17,6 @@ promise1.then(function (value) {
         if (err) throw err;
         console.log(typeof (value));
     });
+    console.log('Object created!');
 });
 
