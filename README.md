@@ -51,7 +51,8 @@ Execute
 node tree.js
 ```
 ###### ** Currently only one directory is supported
-###### ** Recommended to put everything under one directory, for example a dummy linux home directory "/home/media/"
+###### ** Recommended to put everything under one directory, for example a "dummy" linux home directory "/home/media/"
+###### ** files extensions will be sorted by the application code and need no pre-formatting
 # Docs
 
 ## client scripts
