@@ -32,9 +32,14 @@ node app.js
 ```
 
 # Add playlist from Filesystem
-{under construction}
-
-
+To add local directory to app
+```
+nano tree.js
+```
+Enter path
+```js
+const local = "your path to local directory"
+```
 # Docs
 
 ## client scripts
