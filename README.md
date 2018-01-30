@@ -3,7 +3,7 @@ Need to have installed VLC on Debian and Node js
 
 Clone repo then..
 
-###### Configure the port you want to use at local ip
+##### Configure the port you want to use at local ip
 ```
 nano app.js
 ```
