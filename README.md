@@ -54,8 +54,7 @@ Execute
 ```
 node tree.js
 ```
-#### Visit http://[local ip]:[port] using the port defined in app.js
-
+##### Visit http://[local ip]:[port] using the port defined in app.js
 
 enjoy!
 
