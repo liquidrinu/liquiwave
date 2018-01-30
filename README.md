@@ -1,11 +1,15 @@
 # liquiwave
-Need to have installed
+Need to have installed:
 - Debian ( jessie or higher )
 - Wget
 - VLC ( v2.2.7 )
 - Nodejs ( v8+ )
 - NPM ( v5+ ) 
 
+## Description
+local webclient to listen to audio, either from local filesystem or through say a youtube url pasted in the textbox.
+
+## Installation
 
 Clone repo then..
 #### install dependencies
