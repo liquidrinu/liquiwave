@@ -14,6 +14,5 @@ promise1.then(function (value) {
         if (err) throw err;
         console.log(typeof (value));
     });
-    // expected output: "Success!"
 });
 

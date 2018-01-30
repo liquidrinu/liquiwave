@@ -61,15 +61,6 @@ function getXml() {
                 return err;
             }
         });
-    /*
-    dir = exec("wget -O ./public/artwork.png " + url_art +
-        " --user=" + user + " --password=" + pwd + ' || ' + ' rm ' + './public/artwork.png ',
-        function (err, stdout, stderr) {
-            if (err) {
-                return err;
-            }
-        });
-    */
 }
 
 // VLC control mapping
@@ -93,6 +84,6 @@ exports.urls = function (msg) {
     if (/enqueue/.test(msg)) {
         child.stdin.write(msg.concat('\n'));
     } else if (/\/home/.test(msg)) {
-       child.stdin.write('add ' + msg.concat('\n'));
+        child.stdin.write('add ' + msg.concat('\n'));
     }
 };
