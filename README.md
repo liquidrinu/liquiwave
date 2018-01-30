@@ -37,7 +37,7 @@ const vlcPasswd = "secret"
 node app.js
 ```
 
-# Add playlist from Filesystem
+# Create playlist from a Local directory
 To add local directory to app
 ```
 nano tree.js
