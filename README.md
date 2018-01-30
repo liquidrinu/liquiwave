@@ -39,6 +39,7 @@ const vlcPasswd = "secret"
 ```
 node app.js
 ```
+*Visit http://[local ip]:[port] using the port defined in app.js*
 
 ## Create playlist from a Local directory
 To add local directory to app
@@ -54,7 +55,6 @@ Execute
 ```
 node tree.js
 ```
-##### Visit http://[local ip]:[port] using the port defined in app.js
 
 enjoy!
 
