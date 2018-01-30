@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width" content="user-scalable=no" initial-scale="1.0" maximum-scale="1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="theme-color" content="#000000" />
+
+  <title>@VLC Playa</title>
+  <link rel="manifest" href="manifest.json">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" sizes="192x192" href="/icon.png">
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="nav">
+      <div>Liquiwave</div>
+    </div>
+    <div id="options">
+      <div id="block1">
+        <button onclick="location.href = 'http://192.168.1.14:7007/proc'">(ง’̀-‘́)ง</button>
+      </div>
+      <div id="block2">
+        <button>loadin'</button>
+      </div>
+      <div id="block3">
+        <button>loadin'</button>
+      </div>
+      <div id="block4">
+        <button>~(˘▾˘~)</button>
+      </div>
+    </div>
+
+    <div id="data">
+
+      <div id="playlists" class="HIDE vertical-menu">
+      </div>
+
+
+      <div id="dataCenter">
+        <div id="droplet">
+
+        </div>
+
+        <div id="artwork">
+          <img id="art_img">
+        </div>
+
+        <div id="meta">
+          <div id="title"></div>
+          <div id="artist"></div>
+          <div id="time"></div>
+          <div id="url"></div>
+        </div>
+
+      </div>
+
+    </div>
+    <div id="ui">
+      <div id="controls">
+        <div>
+          <button id="volley" onclick="buttonNormalizeVolume()"> ^_^ </button>
+        </div>
+        <div>
+          <button onclick="buttonPlay()">play / pause
+          </button>
+        </div>
+        <div>
+          <button id="menu" class="LOADING" onclick="dataSwitch(), runOnce()">Loading</button>
+        </div>
+        <div>
+          <button onclick="buttonVoldown()">vol -5</button>
+        </div>
+        <div>
+          <button onclick="buttonVolup()">vol +5</button>
+        </div>
+      </div>
+      <div id="msgBox">
+        <input id="msg" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
+        <button onclick="sendMsg()">Send</button>
+        <label for="Player commands"></label>
+      </div>
+    </div>
+  </div>
+
+  <!-- scripts -->
+  <script src="scripts/traverse.js"></script>
+  <!-- Libraries -->
+  <script src="/socket.io/socket.io.js"></script>
+  <!-- scripts -->
+  <script src="scripts/client.js"></script>
+  <script src="scripts/screenToggles.js"></script>
+
+
+</body>
+
+</html>

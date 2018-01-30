@@ -1,0 +1,91 @@
+* {
+    margin: 0;
+    padding: 0;
+    background-color: black;
+    color: rgb(36, 206, 79);
+    outline: 0;
+    
+}
+
+body {
+    clear: both;
+    touch-action: manipulation;
+}
+
+#container {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    border: solid 2px;
+    border-color: rgb(27, 129, 98);
+    overflow: hidden;
+    margin: auto;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+}
+
+#view {
+    display: grid;
+    grid-template-columns: 1fr;
+    border: solid 2px black;
+}
+
+#controls {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    flex-direction: row;
+    margin: 2px;
+}
+
+#controls div {
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.loader {
+
+    margin-top: 8px;
+    margin-bottom: 8px;
+    flex: 1 1 auto;
+    width: 120px;
+    height: 120px;
+    border: 10px solid #05042e;
+    border-top: 10px solid #343fdb;
+    border-bottom: 10px solid #343fdb;
+    border-radius: 50%;
+    animation: spin 1.4s cubic-bezier(0.69, 0.575, 0.565, 1) infinite;
+}
+
+.loader2 {
+    margin-top: 8px;
+    margin-bottom: 8px;
+    flex: 1 1 auto;
+    width: 120px;
+    height: 120px;
+    border: 10px solid #05042e;
+    border-top: 10px solid #343fdb;
+    border-bottom: 10px solid #343fdb;
+    border-radius: 50%;
+    animation: spin 2.8s cubic-bezier(0.39, 0.275, 0.565, 1) infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    50% {
+
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}

@@ -1,0 +1,283 @@
+* {
+    margin: 0;
+    padding: 0;
+    background-color: rgb(15, 15, 15);
+    color: rgb(206, 36, 73);
+    outline: 0;
+    /*font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; */
+}
+
+body {
+    clear: both;
+    touch-action: manipulation;
+}
+
+#url {
+    font-style: italic;
+}
+
+/* pseudo Body */
+
+#container {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    border: solid 2px;
+    border-color: rgb(63, 27, 129);
+    overflow: auto;
+    margin: auto;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+}
+
+#nav {
+    grid-row-start: 1;
+    grid-row-end: 2;
+    color: rgb(0, 59, 107);
+    border-bottom: solid 2px rgb(63, 27, 129);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+    /*font-family: 'Joti One', cursive;*/
+}
+
+#nav div {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 3em;
+    color: rgb(0, 177, 109);
+    text-align: center;
+}
+
+#data {
+    display: grid;
+    grid-row-start: 3;
+    grid-row-end: 7;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    grid-gap: 1%;
+    background-color: rgb(24, 24, 24);
+    color: white;
+    text-align: center;
+}
+
+#ui {
+    display: grid;
+    grid-row-start: 7;
+    grid-row-end: 9;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+    padding-left: 4px;
+    padding-right: 4px;
+}
+
+#droplet {
+    z-index: -10;
+    display: grid;
+    overflow: auto;
+    margin: auto;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+}
+
+/* Middle container START */
+
+#dataCenter {
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+    grid-column: 1/6;
+    grid-row: 1/5;
+}
+
+#artwork {
+    display: grid;
+    grid-row: 1/5;
+}
+
+/* artwork */
+
+#art_img {
+    max-width: 100%;
+    max-height: 100%;
+    margin: 0 auto;
+}
+
+#meta {
+    display: grid;
+    grid-row: 5/6;
+    padding: 4px;
+}
+
+/* Middle container END */
+
+/* BLOCK OPTIONS */
+
+#options {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    text-align: center;
+    margin-bottom: 4px;
+}
+
+#options div button {
+    height: 100%;
+    width: 100%;
+    border-color: rgb(119, 18, 202);
+    text-align: center;
+}
+
+/* playlist menu */
+
+.vertical-menu {
+    display: grid;
+    grid-column: 1/6;
+    grid-row: 1/5;
+    width: 100%;
+    overflow-y: auto;
+}
+
+.vertical-menu li {
+    background-color: #020202;
+    color: rgb(14, 100, 139);
+    height: 50px;
+    padding: 12px;
+    list-style-type: none;
+    text-align: center;
+    border-top: solid 1px rgb(1, 33, 48);
+    border-bottom: solid 1px rgb(1, 33, 48);
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    transition: ease-in 40ms;
+    overflow: hidden;
+}
+
+.vertical-menu li:hover {
+    background-color: rgb(3, 36, 51);
+    color: white;
+    border-color: rgb(130, 140, 145);
+}
+
+.vertical-menu li:active {
+    color: white;
+    animation-name: flicker;
+    animation-duration: 0.8s;
+}
+
+@keyframes flicker {
+    0% {
+        background-color: rgb(3, 52, 75);
+    }
+
+    50% {
+        background-color: rgb(0, 0, 0);
+    }
+
+    100% {
+        background-color: rgb(3, 36, 51);
+    }
+}
+
+/* SCROLLBAR (experimental, make fix tru JS) */
+
+.vertical-menu::-webkit-scrollbar {
+    width: 3em;
+    background-color: rgb(37, 36, 36);
+}
+
+.vertical-menu::-webkit-scrollbar-thumb {
+    background-color: rgb(2, 67, 97);
+    height: 3em;
+}
+
+.vertical-menu::-webkit-scrollbar-thumb:hover {
+    background-color: rgb(0, 82, 121);
+    height: 3em;
+}
+
+.vertical-menu::-webkit-scrollbar-thumb:active {
+    height: 3em;
+    background-color: rgb(33, 226, 91);
+}
+
+/* controls  */
+
+#controls {
+    height: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    text-align: center;
+}
+
+#controls div button {
+    margin: 0 auto;
+    height: 100%;
+    width: 100%;
+    border-color: darkorchid;
+}
+
+.HIDE {
+    display: none;
+    position: absolute;
+    visibility: hidden;
+}
+
+.LOADING {
+    border-radius: 40px;
+    border: solid 2px black;
+    color: white;
+}
+
+/* actual styles below */
+
+#time {
+    background-color: rgb(15, 15, 15);
+    color: rgb(29, 189, 136);
+    /*font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;*/
+    margin: 0 auto;
+}
+
+/* loading round circles */
+
+/* CHATBOX */
+
+#msgBox {
+    display: grid;
+    grid-gap: 4px;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+    grid-column-start: 1;
+    grid-column-end: 1;
+    grid-row-start: 2;
+    grid-row-end: 3;
+    background: #000;
+    margin-top: 4px;
+    margin-bottom: 4px;
+}
+
+#msgBox input {
+    grid-column-start: 1;
+    grid-column-end: 5;
+    border-color: darkorchid;
+    background: linear-gradient(rgb(0, 0, 0), rgb(41, 13, 48), rgb(66, 2, 85));
+}
+
+#msgBox button {
+    grid-column-start: 5;
+    grid-column-end: 6;
+    background: rgb(0, 0, 0);
+    border-color: darkorchid;
+}
+
+#messages {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+#messages li {
+    padding: 5px 10px;
+}
