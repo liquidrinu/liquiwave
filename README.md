@@ -3,17 +3,15 @@
 ### app.js
 
 Declare the port you want to use at local ip
-
 ```
 const port = [port]
 ```
-Start the server and declare route using:
+Start the server 
 ```
 node app.js
 ```
 
-## whats in this repo??
-### client scripts
+## client scripts
 This contains code to control vlc from the client and get the xml data
 ```
 public/scripts/client.js
@@ -22,7 +20,7 @@ This contain the logic that traverses the JS object that shadows the filesystem.
 ```
 public/scripts/traverse.js
 ```
-### server scripts
+## server scripts
 This file spawn a child process to launch vlc on server on a separate thread
 ```
 player/vlc.js
