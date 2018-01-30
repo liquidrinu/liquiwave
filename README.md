@@ -27,6 +27,9 @@ npm install --save
 node app.js
 ```
 
+# Add playlist from Filesystem
+{under construction}
+
 ## client scripts
 ```
 public/scripts/traverse.js
