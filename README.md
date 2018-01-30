@@ -7,14 +7,14 @@ Clone repo then..
 ```
 nano app.js
 ```
-```
+```js
 const port = [port]
 ```
 #### Configure port and passwd for vlc server under [credentials]
 ```
 nano player/vlc.js
 ```
-```
+```js
 const vlcPort = [string];
 const vlcPasswd = [string];
 ```
