@@ -1,7 +1,7 @@
 
 module.exports = function () {
 
-    // Vlc config file )decoupling)
+    // Vlc players ARGS
 
     const args1 = [
         '--no-video',
@@ -10,26 +10,22 @@ module.exports = function () {
         '--http-password', 'kaas'];
 
     const args2 = [
-        // actual audio track test
-        //'https://www.youtube.com/watch?v=GbfL4Q9bP7g',
-
+  
         // dummy track to start
         'https://www.youtube.com/watch?v=Vbks4abvLEw',
+        '--loop',
 
-
-        //cach options
+        //cache options
         '--file-caching=5500',
         '--live-caching=5500',
-        '--network-caching=8500',
+        '--network-caching=8500'
+
         //'--http-caching=9000',  <-- deprecated??
         //'--http-reconnect', '1',
-        '--loop'
     ];
 
     const argsExperimental = [
-
-        // don't autostart on init()
-        //'--no-playlist-autostart',
+        //'--no-playlist-autostart',  
     ];
 
     let opts = args1.concat(args2, argsExperimental);
