@@ -1,5 +1,5 @@
 # liquiwave
-Need to have installed VLC on Debian and Node js
+Need to have installed VLC (v2.2.7), Nodejs(v8+), NPM (5+) on Debian (jessie or higher)
 
 Clone repo then..
 #### install dependencies
