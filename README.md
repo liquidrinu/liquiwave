@@ -43,6 +43,7 @@ public/scripts/client.js
 ```
 - This contains code to control vlc from the client and get the xml data
 
+# pseudo Docs
 ## server scripts
 ```
 player/vlc.js
