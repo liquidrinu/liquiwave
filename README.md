@@ -1,15 +1,38 @@
 # liquiwave
+Need to have installed VLC on Debian and Node js
 
-### app.js
+Clone repo then..
 
-Declare the port you want to use at local ip
+#### Configure the port you want to use at local ip
 ```
-const port = [port]
+nano app.js
 ```
-Start the server 
+```js
+const port = 1337
+```
+#### Configure port and passwd for vlc server under [credentials]
+```
+nano player/vlc.js
+```
+```js
+// different port than above!!
+const vlcPort = "7331"; 
+const vlcPasswd = "secret";
+```
+#### install dependencies
+```
+npm install --save
+```
+#### Start the server 
 ```
 node app.js
 ```
+
+# Add playlist from Filesystem
+{under construction}
+
+
+# pseudo Docs
 
 ## client scripts
 ```
