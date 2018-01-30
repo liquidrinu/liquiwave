@@ -1,8 +1,8 @@
 # liquiwave
 Need to have installed
-- VLC (v2.2.7)
-- Nodejs(v8+)
-- NPM (5+) 
+- VLC ( v2.2.7 )
+- Nodejs ( v8+ )
+- NPM ( v5+ ) 
 
 Debian (jessie or higher)
 
