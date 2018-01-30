@@ -75,7 +75,7 @@ public/scripts/client.js
 ```
 player/vlc.js
 ```
-- This file spawns a child process to launch vlc on server on a separate thread
+- This file spawns a child process to launch vlc on server on a different process
 ```
 player/vlc_config.js
 ```
