@@ -26,7 +26,7 @@ nano app.js
 ```js
 const port = 1337
 ```
-#### Configure port and passwd for vlc server under [credentials]
+#### Configure port and set a password for vlc under [credentials]
 ```
 nano player/vlc.js
 ```
