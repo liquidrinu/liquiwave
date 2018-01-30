@@ -30,7 +30,7 @@ function buttonNormalizeVolume() {
       statXml(this);
     }
   };
-  xhttp.open("GET", "http://192.168.1.14:7007/status.xml", true);
+  xhttp.open("GET", "http://localhost:7007/status.xml", true);
   xhttp.send();
 
   setTimeout(ajaxFn, 50);
@@ -63,8 +63,8 @@ function statXml(xml) {
         document.getElementById('url').innerHTML = array[i].innerHTML;
       }
       if (element == "artwork_url") {
-        // let q = "http://192.168.1.14:7007/artwork.png?random=" + new Date().getTime();
-        //document.getElementById('art_img').src = "http://192.168.1.14:5555/art";
+        // let q = "http://localhost:7007/artwork.png?random=" + new Date().getTime();
+        //document.getElementById('art_img').src = "http://localhost:5555/art";
       }
     }
 
@@ -85,7 +85,7 @@ function statXml(xml) {
       newUrl = xmlUrl.replace(p2, "");
       //  artUrl = 'https://img.youtube.com/vi/' + newUrl + '/0.jpg';
     } //else {
-    // artUrl = "http://192.168.1.14:5555/art";
+    // artUrl = "http://localhost:5555/art";
     //console.log('no Art found');
     // }
     artUrl = 'https://img.youtube.com/vi/' + newUrl + '/0.jpg';

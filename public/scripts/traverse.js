@@ -39,10 +39,12 @@ function runOnce() {
     let loadScroll = Number(localStorage.getItem("loadScroll"));
     let lock = false;
 
-    if (lock === false) {
-        document.getElementById('playlists').scrollTop = loadScroll;
+    if (loadScroll) {
+        if (lock === false) {
+            document.getElementById('playlists').scrollTop = loadScroll;
+        }
+        lock = true;
     }
-    lock = true;
 }
 
 // executed when ajax has loaded
