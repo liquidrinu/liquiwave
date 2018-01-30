@@ -12,7 +12,10 @@ node app.js
 ```
 
 ## client scripts
-This contain the logic that traverses the JS object that shadows the filesystem. It also includes functions to create HTML elements and place them in a container. This file is also responsible for requesting the file to be played at the server, and keep search history in localstorage.
+- This contain the logic that traverses the JS object that shadows the filesystem.
+- includes functions to create HTML elements and place them in a container. 
+- responsible for requesting the file to be played at the server.
+- keep search history in localstorage.
 ```
 public/scripts/traverse.js
 ```
