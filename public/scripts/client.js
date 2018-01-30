@@ -30,7 +30,7 @@ function buttonNormalizeVolume() {
       statXml(this);
     }
   };
-  xhttp.open("GET", "http://localhost:7007/status.xml", true);
+  xhttp.open("GET", "/status.xml", true);
   xhttp.send();
 
   setTimeout(ajaxFn, 50);
