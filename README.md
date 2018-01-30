@@ -8,15 +8,15 @@ Clone repo then..
 nano app.js
 ```
 ```js
-const port = [port]
+const port = 1337
 ```
 #### Configure port and passwd for vlc server under [credentials]
 ```
 nano player/vlc.js
 ```
 ```js
-const vlcPort = [string];
-const vlcPasswd = [string];
+const vlcPort = "7331"; // different port than above!!
+const vlcPasswd = "secret";
 ```
 #### install dependencies
 ```
