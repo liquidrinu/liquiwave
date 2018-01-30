@@ -32,7 +32,7 @@ node app.js
 {under construction}
 
 
-# pseudo Docs
+# Docs
 
 ## client scripts
 ```
