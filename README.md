@@ -3,14 +3,14 @@ Need to have installed VLC on Debian and Node js
 
 Clone repo then..
 
-######Configure the port you want to use at local ip
+###### Configure the port you want to use at local ip
 ```
 nano app.js
 ```
 ```
 const port = [port]
 ```
-######Configure port and passwd for vlc server under [credentials]
+###### Configure port and passwd for vlc server under [credentials]
 ```
 nano player/vlc.js
 ```
@@ -18,11 +18,11 @@ nano player/vlc.js
 const vlcPort = [string];
 const vlcPasswd = [string];
 ```
-######install dependencies
+###### install dependencies
 ```
 npm install --save
 ```
-######Start the server 
+###### Start the server 
 ```
 node app.js
 ```
