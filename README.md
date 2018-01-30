@@ -17,7 +17,7 @@ local webclient to listen to audio, either from local filesystem or through say 
 Clone repo then..
 #### install dependencies
 ```
-npm install --save
+npm install
 ```
 #### Configure the port you want to use at local ip
 ```
