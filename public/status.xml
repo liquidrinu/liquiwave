@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<root>
+
+<volume>125</volume>
+<equalizer></equalizer>
+<audiofilters>
+  <filter_0></filter_0></audiofilters>
+<rate>1</rate>
+<version>2.2.7 Umbrella</version>
+<videoeffects>
+  <saturation>1</saturation>
+  <contrast>1</contrast>
+  <hue>0</hue>
+  <gamma>1</gamma>
+  <brightness>1</brightness></videoeffects>
+<position>0</position>
+<time>0</time>
+<loop>true</loop>
+<repeat>false</repeat>
+<fullscreen>0</fullscreen>
+<state>stopped</state>
+<apiversion>3</apiversion>
+<currentplid>-1</currentplid>
+<subtitledelay>0</subtitledelay>
+<length>0</length>
+<audiodelay>0</audiodelay>
+<random>false</random><information>
+    <category name="meta">
+        </category>
+    </information>
+  <stats>
+    </stats>
+</root>
