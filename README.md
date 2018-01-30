@@ -12,14 +12,15 @@ node app.js
 ```
 
 ## client scripts
+This contain the logic that traverses the JS object that shadows the filesystem. It also includes functions to create HTML elements and place them in a container. This file is also responsible for requesting the file to be played at the server, and keep search history in localstorage.
+```
+public/scripts/traverse.js
+```
 This contains code to control vlc from the client and get the xml data
 ```
 public/scripts/client.js
 ```
-This contain the logic that traverses the JS object that shadows the filesystem. 
-```
-public/scripts/traverse.js
-```
+
 ## server scripts
 This file spawn a child process to launch vlc on server on a separate thread
 ```
