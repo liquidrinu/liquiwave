@@ -3,6 +3,7 @@ const express = require('express');
 const server = require('http').Server(app);
 const io = require('socket.io')(server);
 
+// insert port here, server will run on local host
 const port = 7007;
 
 server.listen(port);

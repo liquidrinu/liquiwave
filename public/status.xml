@@ -1,52 +1,52 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <root>
 
+<apiversion>3</apiversion>
+<videoeffects>
+  <gamma>1</gamma>
+  <brightness>1</brightness>
+  <contrast>1</contrast>
+  <saturation>1</saturation>
+  <hue>0</hue></videoeffects>
+<rate>1</rate>
 <audiofilters>
   <filter_0></filter_0></audiofilters>
-<version>2.2.7 Umbrella</version>
-<equalizer></equalizer>
-<subtitledelay>0</subtitledelay>
-<rate>1</rate>
-<videoeffects>
-  <contrast>1</contrast>
-  <brightness>1</brightness>
-  <saturation>1</saturation>
-  <hue>0</hue>
-  <gamma>1</gamma></videoeffects>
-<fullscreen>0</fullscreen>
-<apiversion>3</apiversion>
-<currentplid>6</currentplid>
-<position>0.077386550605297</position>
-<repeat>false</repeat>
-<length>36</length>
-<loop>false</loop>
 <audiodelay>0</audiodelay>
-<time>2</time>
+<currentplid>4</currentplid>
 <volume>105</volume>
-<state>paused</state>
+<version>2.2.7 Umbrella</version>
+<fullscreen>0</fullscreen>
+<loop>true</loop>
+<repeat>false</repeat>
+<state>playing</state>
+<position>0</position>
+<subtitledelay>0</subtitledelay>
+<time>0</time>
+<equalizer></equalizer>
+<length>0</length>
 <random>false</random><information>
     <category name="meta">
-    <info name='track_total'>96</info><info name='album'>Final Fantasy XV</info><info name='title'>Broken Down</info><info name='artist'>Tetsuya Shibata</info><info name='artwork_url'>file:///home/media/_AUDIO_/Julis-drop/Yoko%20Shimomura%20-%20Final%20Fantasy%20XV%20%5B2016%5D%20MP3%20320/cover.jpg</info><info name='genre'>Score</info><info name='filename'>Broken Down</info><info name='publisher'>Square Enix Music</info><info name='date'>2016</info><info name='track_number'>3</info>    </category>
-  <category name='Stream 0'><info name='Sample rate'>48000 Hz</info><info name='Codec'>MPEG Audio layer 1/2 (mpga)</info><info name='Type'>Audio</info><info name='Channels'>Stereo</info><info name='Bitrate'>320 kb/s</info></category>  </information>
+    <info name='filename'>https://www.youtube.com/watch?v=Vbks4abvLEw</info>    </category>
+    </information>
   <stats>
-  <demuxreadpackets>0</demuxreadpackets>
-<sentpackets>0</sentpackets>
-<averagedemuxbitrate>0</averagedemuxbitrate>
-<decodedaudio>142</decodedaudio>
+  <readpackets>0</readpackets>
+<demuxreadpackets>0</demuxreadpackets>
 <displayedpictures>0</displayedpictures>
-<readpackets>330</readpackets>
-<demuxreadbytes>335040</demuxreadbytes>
-<demuxbitrate>0.039999801665545</demuxbitrate>
-<demuxdiscontinuity>0</demuxdiscontinuity>
 <sendbitrate>0</sendbitrate>
-<lostabuffers>0</lostabuffers>
+<averagedemuxbitrate>0</averagedemuxbitrate>
 <averageinputbitrate>0</averageinputbitrate>
+<demuxdiscontinuity>0</demuxdiscontinuity>
+<demuxreadbytes>0</demuxreadbytes>
 <demuxcorrupted>0</demuxcorrupted>
-<playedabuffers>142</playedabuffers>
-<sentbytes>0</sentbytes>
-<readbytes>337180</readbytes>
-<lostpictures>0</lostpictures>
 <decodedvideo>0</decodedvideo>
-<inputbitrate>0.038763966411352</inputbitrate>
+<demuxbitrate>0</demuxbitrate>
+<readbytes>0</readbytes>
+<lostabuffers>0</lostabuffers>
+<inputbitrate>0</inputbitrate>
+<sentpackets>0</sentpackets>
+<decodedaudio>0</decodedaudio>
+<sentbytes>0</sentbytes>
+<playedabuffers>0</playedabuffers>
+<lostpictures>0</lostpictures>
   </stats>
 </root>
