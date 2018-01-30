@@ -40,6 +40,10 @@ Enter path
 ```js
 const local = "your path to local directory"
 ```
+Execute
+```
+node tree.js
+```
 # Docs
 
 ## client scripts
