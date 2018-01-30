@@ -7,12 +7,12 @@ const local = '/home/media/_AUDIO_';
 
 const f_tree = dirTree(local);
 
-var promise1 = new Promise(function (resolve, reject) {
+var promiseTree = new Promise(function (resolve, reject) {
     const dataTree = f_tree;
     resolve(JSON.stringify(dataTree));
 });
 
-promise1.then(function (value) {
+promiseTree.then(function (value) {
     fs.writeFile('./public/library.json', value, (err) => {
         if (err) throw err;
         console.log(typeof (value));

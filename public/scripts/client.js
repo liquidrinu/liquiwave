@@ -1,6 +1,5 @@
-
 // client script to emit messages through socket.io
-var socket = io();
+const socket = io();
 
 function sendMsg() {
   let y = document.getElementById('msg');
@@ -25,7 +24,7 @@ function buttonNormalizeVolume() {
 
 // display status data from server [AJAX]
 (function ajaxFn() {
-  var xhttp = new XMLHttpRequest();
+  let xhttp = new XMLHttpRequest();
   xhttp.onreadystatechange = function () {
     if (this.readyState == 4 && this.status == 200) {
       statXml(this);
@@ -38,16 +37,16 @@ function buttonNormalizeVolume() {
 })();
 
 // XML Processing, parsing parameters and placing them in divs
-var format = "";
+let format = "";
 
 function statXml(xml) {
-  var parser = new DOMParser();
-  var xmlDoc = parser.parseFromString(xml.responseText, "text/html");
-  var rootTag = xmlDoc.getElementsByTagName('root');
+  let parser = new DOMParser();
+  let xmlDoc = parser.parseFromString(xml.responseText, "text/html");
+  let rootTag = xmlDoc.getElementsByTagName('root');
 
   if (xmlDoc) {
 
-    var array = xmlDoc.getElementsByTagName("info");
+    let array = xmlDoc.getElementsByTagName("info");
 
     // loop through all meta data
     for (let i = 0; i < array.length; i++) {
@@ -64,8 +63,7 @@ function statXml(xml) {
         document.getElementById('url').innerHTML = array[i].innerHTML;
       }
       if (element == "artwork_url") {
-        // var altArt = array[i].innerHTML;
-        //var q = "http://192.168.1.14:7007/artwork.png?random=" + new Date().getTime();
+        // let q = "http://192.168.1.14:7007/artwork.png?random=" + new Date().getTime();
         //document.getElementById('art_img').src = "http://192.168.1.14:5555/art";
       }
     }
@@ -119,8 +117,8 @@ function statXml(xml) {
   })();
 
   //current time
-  var current = xmlDoc.getElementsByTagName('time');
-  var finished = xmlDoc.getElementsByTagName('length');
+  let current = xmlDoc.getElementsByTagName('time');
+  let finished = xmlDoc.getElementsByTagName('length');
 
   if (current[0] && finished[0] && rootTag !== 'undefined') {
     let array = [current[0].innerHTML, finished[0].innerHTML];
@@ -135,7 +133,7 @@ function statXml(xml) {
   }
 
   //current volume
-  var volumeStat = xmlDoc.getElementsByTagName('volume');
+  let volumeStat = xmlDoc.getElementsByTagName('volume');
   if (volumeStat[0] && rootTag !== 'undefined') {
     document.getElementById('volley').innerHTML =
       "Volume =" + "\n" + volumeStat[0].innerHTML;
@@ -144,9 +142,9 @@ function statXml(xml) {
 
 // Format function used above in 'current_time' 
 function time(secs) {
-  var hr = Math.floor(secs / 3600);
-  var min = Math.floor((secs - (hr * 3600)) / 60);
-  var sec = Math.floor(secs - (hr * 3600) - (min * 60));
+  let hr = Math.floor(secs / 3600);
+  let min = Math.floor((secs - (hr * 3600)) / 60);
+  let sec = Math.floor(secs - (hr * 3600) - (min * 60));
 
   if (min < 10) {
     min = "0" + min;

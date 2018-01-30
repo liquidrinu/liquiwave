@@ -2,7 +2,7 @@
 
 // library.json AJAX
 (function () {
-    var xhttp = new XMLHttpRequest();
+    let xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
             infiniTree(this);
@@ -81,8 +81,8 @@ function infiniTree(json) {
 
     function traverse(path, node, c_Scroll) {
         //  get last element off the arraysss
-        var cPath = path.slice(-1)[0];
-        var cNode = node.slice(-1)[0];
+        let cPath = path.slice(-1)[0];
+        let cNode = node.slice(-1)[0];
 
         // clear playlists
         document.getElementById("playlists").innerHTML = "";
@@ -90,7 +90,7 @@ function infiniTree(json) {
         // lay out current directory
         if (cNode && cPath !== 'undefined') {
             for (let i = 0; i < cNode[0].children.length; i++) {
-                var element = cNode[0].children[i];
+                let element = cNode[0].children[i];
                 assignElement(element);
             }
             document.getElementById('playlists').scrollTop = Number(c_Scroll);
@@ -98,8 +98,8 @@ function infiniTree(json) {
 
         // Back button
         if (node.length < 1) {
-            var btn = document.createElement("BUTTON");
-            var t = document.createTextNode("~(˘▾˘~)");
+            let btn = document.createElement("BUTTON");
+            let t = document.createTextNode("~(˘▾˘~)");
             btn.appendChild(t);
             document.getElementById("block4").innerHTML = "";
             document.getElementById("block4").appendChild(btn);
@@ -112,11 +112,11 @@ function infiniTree(json) {
 
     // HELPER FUNCTIONs  BELOW
     function assignElement(element) {
-        if (element.type == "directory") {
-            var dir = "dir  " + element.name;
+        if (element.type === "directory") {
+            let dir = "dir  " + element.name;
             createBtn(dir, element);
         } else {
-            var file = "file " + element.name;
+            let file = "file " + element.name;
             createBtn(file, element);
         }
     }
@@ -127,14 +127,14 @@ function infiniTree(json) {
     function createBtn(input, element) {
 
         // generic html button creation
-        var btn = document.createElement("LI");
-        var t = document.createTextNode(input);
+        let btn = document.createElement("LI");
+        let t = document.createTextNode(input);
         btn.appendChild(t);
         btn.setAttribute('data', element.name);
 
         // add event listener to get data and execute traverse again
         btn.addEventListener('click', function () {
-            var data = this.getAttribute('data');
+            let data = this.getAttribute('data');
 
             // FILES
             if (element.type == "file") {
@@ -142,7 +142,7 @@ function infiniTree(json) {
                 // check format
                 for (let i = 0; i < opts.playFormat.length; i++) {
                     const audioExtension = opts.playFormat[i];
-                    if (element.extension.toLowerCase() == audioExtension) {
+                    if (element.extension.toLowerCase() === audioExtension) {
                         if (addTrax === false) {
                             //socket.io => play file => vlc
                             socket.emit('message', element.path);
@@ -155,9 +155,9 @@ function infiniTree(json) {
             }
 
             // DIRECTORY
-            if (element.type == "directory") {
+            if (element.type === "directory") {
                 // Go into Directory!!
-                var c_Scroll = document.getElementById('playlists').scrollTop;
+                let c_Scroll = document.getElementById('playlists').scrollTop;
                 node.push([element]);
                 path.push({ "data": data, "c_Scroll": c_Scroll });
                 traverse(path, node);
@@ -170,17 +170,17 @@ function infiniTree(json) {
 
     // Back Button
     function back_button() {
-        var btn = document.createElement("BUTTON");
-        var t = document.createTextNode("BACK");
+        let btn = document.createElement("BUTTON");
+        let t = document.createTextNode("BACK");
         btn.appendChild(t);
         btn.setAttribute('data', 'backButton');
         btn.id = "backBtn";
 
         // add event listener
         btn.addEventListener('click', function () {
-            var data = this.getAttribute('data');
-            var parentScroll = path.slice(-1)[0];
-            var c_Scroll = parentScroll.c_Scroll;
+            let data = this.getAttribute('data');
+            let parentScroll = path.slice(-1)[0];
+            let c_Scroll = parentScroll.c_Scroll;
 
             if (data === 'backButton') {
                 path.pop();
@@ -193,15 +193,15 @@ function infiniTree(json) {
 
     //playlist CLEAR (double touch)
     function clearPlistBtn() {
-        var btn = document.createElement("BUTTON");
-        var t = document.createTextNode("Clear Plist");
+        let btn = document.createElement("BUTTON");
+        let t = document.createTextNode("Clear Plist");
         btn.appendChild(t);
         btn.setAttribute('data', "clear");
         //remove element
         document.getElementById("block2").innerHTML = "";
 
         // add touch event (tappy.js)
-        var clickTimer = null;
+        let clickTimer = null;
 
         btn.addEventListener('click',
             function touchStart() {
@@ -222,11 +222,11 @@ function infiniTree(json) {
     } clearPlistBtn();
 
     // ADD TraCKs
-    var addTrax = false;
+    let addTrax = false;
 
     function addList() {
-        var btn = document.createElement("BUTTON");
-        var t = document.createTextNode("");
+        let btn = document.createElement("BUTTON");
+        let t = document.createTextNode("");
         btn.innerHTML = "ADD <br>" + "off";
         btn.appendChild(t);
         btn.setAttribute('data', "off");
@@ -235,7 +235,7 @@ function infiniTree(json) {
 
         // add event listener to get data and execute traverse again
         btn.addEventListener('click', function () {
-            var data = this.getAttribute('data');
+            let data = this.getAttribute('data');
             if (data === "off") {
                 // setter
                 addTrax = true;

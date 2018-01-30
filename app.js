@@ -19,6 +19,7 @@ app.get('/', function (req, res) {
   res.sendFile(__dirname + '/public/index.html');
 });
 
+// (under construction)
 app.get('/proc', function (req, res) {
   res.sendFile(__dirname + '/PROC/index.html');
 });
@@ -31,7 +32,7 @@ io.on('connection', function (socket) {
   });
 });
 
-// TEST
+// uncomment below to check connections
 io.on('connection', function (socket) {
   //console.log('a user connected');
   socket.on('disconnect', function () {

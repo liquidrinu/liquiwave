@@ -37,7 +37,7 @@ child.stderr.pipe(process.stderr);
 //process.stdin.pipe(child.stdin);
 
 // get xml file from VLC
-var exec = require('child_process').exec;
+const exec = require('child_process').exec;
 
 function intervalTime(i) {
     setTimeout(() => {
@@ -68,7 +68,7 @@ function getXml() {
 const player = require('./commands');
 
 exports.control = function (msg) {
-    for (var cmd in player) {
+    for (const cmd in player) {
         if (cmd == msg) {
             child.stdin.write(player[cmd]);
         }
