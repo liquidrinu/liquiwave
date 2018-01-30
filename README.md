@@ -30,6 +30,9 @@ node app.js
 # Add playlist from Filesystem
 {under construction}
 
+
+# pseudo Docs
+
 ## client scripts
 ```
 public/scripts/traverse.js
@@ -43,7 +46,6 @@ public/scripts/client.js
 ```
 - This contains code to control vlc from the client and get the xml data
 
-# pseudo Docs
 ## server scripts
 ```
 player/vlc.js
