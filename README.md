@@ -25,7 +25,7 @@ nano player/vlc.js
 ```
 ```js
 
-const vlcPort = 7331    // different port than above!
+const vlcPort = 7331    // different port than app.js!
 const vlcPasswd = "secret"
 ```
 #### Start the server 
