@@ -54,9 +54,11 @@ Execute
 ```
 node tree.js
 ```
-Visit http://[local ip]:[port] using the port defined in app.js
+## Visit http://[local ip]:[port] using the port defined in app.js
 
-## enjoy
+
+enjoy
+
 ###### ** Currently only one directory is supported
 ###### ** Recommended to put everything under one directory, for example a "dummy" linux home directory "/home/media/"
 ###### ** files extensions will be sorted by the application code and need no pre-formatting
