@@ -1,52 +1,52 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <root>
 
+<time>0</time>
+<state>playing</state>
+<fullscreen>0</fullscreen>
+<length>0</length>
+<audiofilters>
+  <filter_0></filter_0></audiofilters>
+<position>0</position>
+<subtitledelay>0</subtitledelay>
+<version>2.2.7 Umbrella</version>
 <volume>105</volume>
+<videoeffects>
+  <saturation>1</saturation>
+  <contrast>1</contrast>
+  <gamma>1</gamma>
+  <brightness>1</brightness>
+  <hue>0</hue></videoeffects>
+<currentplid>5</currentplid>
+<apiversion>3</apiversion>
+<loop>true</loop>
 <rate>1</rate>
 <audiodelay>0</audiodelay>
-<videoeffects>
-  <contrast>1</contrast>
-  <brightness>1</brightness>
-  <gamma>1</gamma>
-  <hue>0</hue>
-  <saturation>1</saturation></videoeffects>
-<currentplid>6</currentplid>
-<time>5</time>
-<subtitledelay>0</subtitledelay>
-<position>0.014778020791709</position>
-<state>paused</state>
-<random>false</random>
-<repeat>false</repeat>
-<fullscreen>0</fullscreen>
-<loop>false</loop>
-<length>350</length>
-<apiversion>3</apiversion>
 <equalizer></equalizer>
-<version>2.2.7 Umbrella</version>
-<audiofilters>
-  <filter_0></filter_0></audiofilters><information>
+<repeat>false</repeat>
+<random>false</random><information>
     <category name="meta">
-    <info name='album'>Final Fantasy XV</info><info name='publisher'>Square Enix Music</info><info name='date'>2016</info><info name='genre'>Score</info><info name='artwork_url'>file:///home/media/_AUDIO_/Julis-drop/Yoko%20Shimomura%20-%20Final%20Fantasy%20XV%20%5B2016%5D%20MP3%20320/cover.jpg</info><info name='track_total'>96</info><info name='artist'>Yoshitaka Suzuki／Yoko Shimomura</info><info name='track_number'>5</info><info name='filename'>Wanderlust</info><info name='title'>Wanderlust</info>    </category>
-  <category name='Stream 0'><info name='Bitrate'>320 kb/s</info><info name='Type'>Audio</info><info name='Codec'>MPEG Audio layer 1/2 (mpga)</info><info name='Sample rate'>48000 Hz</info><info name='Channels'>Stereo</info></category>  </information>
+    <info name='artist'>Listen Lounge</info><info name='description'>This begins my 186 part series of silent videos (TRT: 332.86 hours).&amp;lt;br /&amp;gt;The series continues chronologically through every second (up to 100 seconds), every minute (up to 60 minutes), and every hour (up to 24 hours), with a few exceptions.&amp;lt;br /&amp;gt;&amp;lt;br /&amp;gt;All 186 videos were uploaded on February 2nd, 2015&amp;lt;br /&amp;gt;&amp;lt;br /&amp;gt;The first video from my new series of &amp;quot;videos with sound&amp;quot; can be seen here: &amp;lt;a href=&amp;quot;/watch?v=s4y9HkfWnL8&amp;quot; class=&amp;quot;yt-uix-sessionlink       spf-link &amp;quot; data-sessionlink=&amp;quot;itct=CDIQ6TgYACITCNWiua_BgNkCFR6SVQodPBYJYSj4HQ&amp;quot; &amp;gt;http://youtu.be/s4y9HkfWnL8&amp;lt;/a&amp;gt;</info><info name='url'>https://www.youtube.com/watch?v=Vbks4abvLEw</info><info name='artwork_url'>file:///home/pi/.cache/vlc/art/arturl/f3ab6fd9cae62abc82610210ed30bfa1/art.jpg</info><info name='title'>1 second of silence (The Beginning)</info><info name='filename'>1 second of silence (The Beginning)</info>    </category>
+  <category name='Stream 0'><info name='Codec'>H264 - MPEG-4 AVC (part 10) (avc1)</info><info name='Display resolution'>1280x720</info><info name='Type'>Video</info><info name='Frame rate'>25</info><info name='Resolution'>1280x720</info></category><category name='Stream 1'><info name='Sample rate'>44100 Hz</info><info name='Type'>Audio</info><info name='Codec'>MPEG AAC Audio (mp4a)</info><info name='Channels'>Stereo</info></category>  </information>
   <stats>
-  <demuxdiscontinuity>0</demuxdiscontinuity>
+  <sentpackets>0</sentpackets>
+<lostabuffers>0</lostabuffers>
+<demuxdiscontinuity>0</demuxdiscontinuity>
+<decodedvideo>0</decodedvideo>
+<decodedaudio>41</decodedaudio>
+<averageinputbitrate>0</averageinputbitrate>
+<averagedemuxbitrate>0</averagedemuxbitrate>
+<readbytes>18233</readbytes>
+<demuxreadpackets>0</demuxreadpackets>
+<demuxbitrate>0</demuxbitrate>
+<demuxreadbytes>15309</demuxreadbytes>
+<sentbytes>0</sentbytes>
+<sendbitrate>0</sendbitrate>
+<playedabuffers>41</playedabuffers>
+<readpackets>31</readpackets>
 <demuxcorrupted>0</demuxcorrupted>
+<inputbitrate>0</inputbitrate>
 <lostpictures>0</lostpictures>
 <displayedpictures>0</displayedpictures>
-<demuxreadpackets>0</demuxreadpackets>
-<decodedaudio>243</decodedaudio>
-<averagedemuxbitrate>0</averagedemuxbitrate>
-<readpackets>423</readpackets>
-<sentbytes>0</sentbytes>
-<demuxreadbytes>431040</demuxreadbytes>
-<inputbitrate>0.039690136909485</inputbitrate>
-<sendbitrate>0</sendbitrate>
-<lostabuffers>0</lostabuffers>
-<playedabuffers>243</playedabuffers>
-<demuxbitrate>0.039537977427244</demuxbitrate>
-<sentpackets>0</sentpackets>
-<decodedvideo>0</decodedvideo>
-<readbytes>432784</readbytes>
-<averageinputbitrate>0</averageinputbitrate>
   </stats>
 </root>
