@@ -10,7 +10,6 @@ module.exports = function () {
         '--http-password', 'kaas'];
 
     const args2 = [
-  
         // dummy track to start
         'https://www.youtube.com/watch?v=Vbks4abvLEw',
         '--loop',
