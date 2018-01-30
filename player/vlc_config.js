@@ -1,13 +1,11 @@
+module.exports = function (vlcPort, vlcPasswd) {
 
-module.exports = function () {
-
-    // Vlc players ARGS
-
+    // vlc command [args]
     const args1 = [
         '--no-video',
         '--preferred-resolution', '720',
-        '--extraintf', 'http', '--http-port', '5555',
-        '--http-password', 'kaas'];
+        '--extraintf', 'http', '--http-port', vlcPort,
+        '--http-password', vlcPasswd];
 
     const args2 = [
         // dummy track to start
