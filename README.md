@@ -7,8 +7,14 @@ Need to have installed:
 - NPM ( v5+ ) 
 
 *feeling lucky?*
+
+as root user..
 ```bash
 apt-get update && apt-get upgrade -y && apt-get install wget vlc nodejs -y && npm install npm@latest -g -y
+```
+..or with sudo
+```bash
+sudo apt-get update && sudo apt-get upgrade -y && sudo apt-get install wget vlc nodejs -y && sudo npm install npm@latest -g -y
 ```
 ###### ** Know what your doing, will also update the system without prompting!
 ## Description
