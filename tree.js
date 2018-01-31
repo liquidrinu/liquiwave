@@ -1,14 +1,15 @@
 // Script to turn { File System } into a json object array to : ./public/library.json
 const fs = require('fs');
 const dirTree = require('directory-tree');
+const { execFile } = require('child_process');
 
 // Main local Directory
 const local = '/home/media/_AUDIO_';
 
-const f_tree = dirTree(local);
+const path = dirTree(local);
 
 var promiseTree = new Promise(function (resolve, reject) {
-    const dataTree = f_tree;
+    const dataTree = path;
     resolve(JSON.stringify(dataTree));
 });
 
@@ -17,6 +18,13 @@ promiseTree.then(function (value) {
         if (err) throw err;
         console.log(typeof (value));
     });
+
+    // create symlink
+    const child = execFile('ln -s', [dataTree], (error, stdout, stderr) => {
+      if (error) {
+        throw error;
+      }
+      console.log(stdout);
+    });
     console.log('Object created!');
 });
-
