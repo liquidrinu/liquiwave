@@ -2,11 +2,11 @@ module.exports = function (vlcPort, vlcPasswd) {
 
     // vlc command [args]
     const args1 = [
+        '-I', 'rc',
         '--no-video',
         '--preferred-resolution', '720',
         '--extraintf', 'http', '--http-port', vlcPort,
-        '--http-password', vlcPasswd,
-        '--extraint', 'rc'
+        '--http-password', vlcPasswd, 
     ];
 
     const args2 = [
@@ -18,7 +18,6 @@ module.exports = function (vlcPort, vlcPasswd) {
         '--file-caching=5500',
         '--live-caching=5500',
         '--network-caching=8500'
-
         //'--http-caching=9000',  <-- deprecated??
         //'--http-reconnect', '1',
     ];
