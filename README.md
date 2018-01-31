@@ -31,14 +31,15 @@ const port = 1337
 nano player/vlc.js
 ```
 ```js
-
-const vlcPort = 7331 // use a different port than app.js!
+// use a different port than app.js!
+const vlcPort = 7331 
 const vlcPasswd = "secret"
 ```
 #### Start the server 
 ```
 node app.js
 ```
+*Visit http://[local ip]:[port] using the port defined in app.js*
 
 ## Create playlist from a Local directory
 To add local directory to app
@@ -47,13 +48,18 @@ nano tree.js
 ```
 Enter path
 ```js
-const local = "/your/path/to/local/directory" // absolute path preferred
+// absolute path preferred
+const local = "/your/path/to/local/directory" 
 ```
 Execute
 ```
 node tree.js
 ```
-###### ** Currently only one directory is supported
+*pro-tip: If it's a big directory you might want to grab a coffee*
+
+enjoy!
+
+###### ** Currently only one object is supported
 ###### ** Recommended to put everything under one directory, for example a "dummy" linux home directory "/home/media/"
 ###### ** files extensions will be sorted by the application code and need no pre-formatting
 # Docs
