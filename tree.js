@@ -26,6 +26,7 @@ promiseTree.then(function (value) {
         if (error) {
             throw error;
         }
-        console.log('\n if symlink is already made, then you can ignore these errors!');
+        console.log('\n if symlink is already made' +
+            ' then you can ignore these errors!');
     });
 });
