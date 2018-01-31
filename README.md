@@ -1,11 +1,15 @@
 # liquiwave
 Need to have installed:
-- Debian ( jessie or higher )
+- Debian v8.0-v9.0
 - Wget
-- VLC ( v2.2.7 )
-- Nodejs ( v8+ )
-- NPM ( v5+ ) 
+- VLC  v2.2.7
+- Nodejs v8+
+- NPM v5+
 
+*feeling lucky?*
+```bash
+apt-get install wget vlc nodejs npm -y
+````
 ## Description
 local webclient to listen to audio, either from local filesystem or through say a youtube url pasted in the textbox.
 
