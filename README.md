@@ -55,11 +55,11 @@ Execute
 ```
 node tree.js
 ```
-##### *pro-tip: If it's a big directory you might want to grab a coffee*
+*pro-tip: If it's a big directory you might want to grab a coffee*
 
 enjoy!
 
-###### ** Currently only one directory is supported
+###### ** Currently only one object is supported
 ###### ** Recommended to put everything under one directory, for example a "dummy" linux home directory "/home/media/"
 ###### ** files extensions will be sorted by the application code and need no pre-formatting
 # Docs
