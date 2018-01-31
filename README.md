@@ -10,7 +10,7 @@ Need to have installed:
 ```bash
 apt-get update && apt-get upgrade -y && apt-get install wget vlc nodejs -y && npm install npm@latest -g -y
 ```
-###### Know what your doing, will also update the system without prompting
+###### ** Know what your doing, will also update the system without prompting!
 ## Description
 local webclient to listen to audio, either from local filesystem or through say a youtube url pasted in the textbox.
 
