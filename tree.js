@@ -16,10 +16,8 @@ var promiseTree = new Promise(function (resolve, reject) {
 promiseTree.then(function (value) {
     fs.writeFile('./public/library.json', value, (err) => {
         if (err) throw err;
-        console.log(typeof (value));
+        console.log('Object created at ./public/library.json');
     });
-
-    console.log('Object created!');
 }).then(function () {
     // create symlink
     const args = ['-s', local];
@@ -28,10 +26,6 @@ promiseTree.then(function (value) {
         if (error) {
             throw error;
         }
-        //console.log(stdout);
-        if (stderr) {
-            // okey
-        }
+        console.log('\n if symlink is already made, then you can ignore these errors!');
     });
 });
-
