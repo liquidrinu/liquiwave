@@ -10,7 +10,6 @@ Need to have installed:
 local webclient to listen to audio, either from local filesystem or through say a youtube url pasted in the textbox.
 
 ###### ** livestreams not supported
-###### ** video urls (ie. youtube) can be imported and audio will be extracted
 
 ## Installation
 
