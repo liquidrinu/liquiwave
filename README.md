@@ -55,6 +55,7 @@ Execute
 ```
 node tree.js
 ```
+###### If it's a big directory you might want to grab a coffee
 
 enjoy!
 
