@@ -2,6 +2,7 @@ audio/
 _AUDIO_
 LOGS/
 public/library.json
+public/status.xml
 node_modules/
 package-lock.json
 PROC/
