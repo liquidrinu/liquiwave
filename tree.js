@@ -19,12 +19,19 @@ promiseTree.then(function (value) {
         console.log(typeof (value));
     });
 
-    // create symlink
-    const child = execFile('ln -s', [dataTree], (error, stdout, stderr) => {
-      if (error) {
-        throw error;
-      }
-      console.log(stdout);
-    });
     console.log('Object created!');
+}).then(function () {
+    // create symlink
+    const args = ['-s', local];
+
+    const child = execFile('ln', args, (error, stdout, stderr) => {
+        if (error) {
+            throw error;
+        }
+        //console.log(stdout);
+        if (stderr) {
+            // okey
+        }
+    });
 });
+
