@@ -5,7 +5,9 @@ module.exports = function (vlcPort, vlcPasswd) {
         '--no-video',
         '--preferred-resolution', '720',
         '--extraintf', 'http', '--http-port', vlcPort,
-        '--http-password', vlcPasswd];
+        '--http-password', vlcPasswd,
+        '--extraint', 'rc'
+    ];
 
     const args2 = [
         // dummy track to start
