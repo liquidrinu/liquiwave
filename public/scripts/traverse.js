@@ -34,7 +34,6 @@ const opts = {
 };
 
 // Hacky way to get last scroll position in Menu
-
 function runOnce() {
     let loadScroll = Number(localStorage.getItem("loadScroll"));
     let lock = false;
@@ -112,7 +111,7 @@ function infiniTree(json) {
         }
     }
 
-    // HELPER FUNCTIONs  BELOW
+    // Helper functions below
     function assignElement(element) {
         if (element.type === "directory") {
             let dir = "dir  " + element.name;
@@ -123,9 +122,7 @@ function infiniTree(json) {
         }
     }
 
-
-
-    // DIRECTORY && FILE BUTTONS SWA!!!
+    // DIRECTORY && FILE BUTTON [Generators]
     function createBtn(input, element) {
 
         // generic html button creation
