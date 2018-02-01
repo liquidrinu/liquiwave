@@ -6,7 +6,6 @@ Need to have installed:
 - Nodejs v8+
 - NPM v5+
 
-*feeling lucky?*
 ```bash
 apt-get install wget vlc nodejs npm -y
 ````
