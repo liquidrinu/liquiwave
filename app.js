@@ -4,7 +4,7 @@ const server = require('http').Server(app);
 const io = require('socket.io')(server);
 
 // insert port here, server will run on local host
-const port = 7007;
+const port = 3000;
 
 server.listen(port);
 console.log("Server listening at port: " + port + "\n");
