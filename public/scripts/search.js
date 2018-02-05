@@ -1,14 +1,4 @@
-/*(function () {
-    let xhttp = new XMLHttpRequest();
-    xhttp.onreadystatechange = function () {
-        if (this.readyState == 4 && this.status == 200) {
-          //  filter(this);
-        }
-    };
-    xhttp.open("GET", "library.json", true);
-    xhttp.send();
-})();*/
-
+// requires /library.json
 function filter(json) {
 
     let o = JSON.parse(json.responseText);
@@ -109,28 +99,7 @@ function filter(json) {
         })()
     );
 
-    function item(input) {
-        let btn = document.createElement("BUTTON");
-        let t = document.createTextNode(input);
-        btn.appendChild(t);
-        btn.setAttribute('data', input.path);
-
-        // event lister
-        btn.addEventListener('click', function () {
-            let data = this.getAttribute('data');
-            if (data === "off") {
-                this.setAttribute('data', "on");
-                // Fn
-                this.style.backgroundColor = "limegreen";
-            } else {
-                this.setAttribute('data', "off");
-                // Fn
-                this.style.backgroundColor = "rgb(119, 18, 202)";
-            }
-        }, false);
-        document.getElementById("box").appendChild(btn);
-    }
-
+      
     function createBtn(input, element, frame) {
         // generic html button creation
         let btn = document.createElement("LI");
