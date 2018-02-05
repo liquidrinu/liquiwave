@@ -26,11 +26,13 @@ function buttonNormalizeVolume() {
 (function ajaxFn() {
   let xhttp = new XMLHttpRequest();
   xhttp.onreadystatechange = function () {
-    if (this.readyState == 4 && this.status == 200) {
-      statXml(this);
+    if (this.readyState === 4 && this.status === 200) {
+       statXml(this);
     }
   };
+  
   xhttp.open("GET", "/status.xml", true);
+  xhttp.overrideMimeType('text/html');
   xhttp.send();
 
   setTimeout(ajaxFn, 50);

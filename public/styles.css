@@ -38,7 +38,7 @@ body {
     grid-row-end: 2;
     color: rgb(0, 59, 107);
     border-bottom: solid 2px rgb(63, 27, 129);
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     /*font-family: 'Joti One', cursive;*/
 }
 
@@ -83,6 +83,7 @@ body {
     left: 0;
     bottom: 0;
     right: 0;
+    background-color: red;
 }
 
 /* Middle container START */
@@ -129,6 +130,23 @@ body {
     width: 100%;
     border-color: rgb(119, 18, 202);
     text-align: center;
+}
+
+/* Search list */
+
+#searchScreen {
+    background-color: black;
+}
+
+#data input {
+    position: relative;
+    width: 100%;
+    height: 40px;
+}
+
+.searchList {
+    z-index: 10;
+    background-color: rgb(28, 33, 34);
 }
 
 /* playlist menu */

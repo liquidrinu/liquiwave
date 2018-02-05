@@ -22,7 +22,8 @@
     </div>
     <div id="options">
       <div id="block1">
-        <button onclick="location.href = 'http://192.168.1.14:7007/proc'">(ง’̀-‘́)ง</button>
+        <!-- <button onclick="location.href = 'http://192.168.1.14:7007/proc'">(ง’̀-‘́)ง</button> -->
+        <button id="searchFile" onclick="searchSwitch()">Search</button>
       </div>
       <div id="block2">
         <button>loadin'</button>
@@ -40,6 +41,9 @@
       <div id="playlists" class="HIDE vertical-menu">
       </div>
 
+      <div id="searchList" class="HIDE vertical-menu">
+        <div id="searchVIEW"></div>
+      </div>
 
       <div id="dataCenter">
         <div id="droplet">
@@ -94,6 +98,7 @@
   <!-- scripts -->
   <script src="scripts/client.js"></script>
   <script src="scripts/screenToggles.js"></script>
+  <script src="scripts/search.js"></script>
 
 
 </body>

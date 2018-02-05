@@ -18,3 +18,10 @@ function dataSwitch() {
     y.classList.toggle("HIDE");
     z.classList.toggle("HIDE");
 }
+
+// class list toggle for [searchList]
+function searchSwitch() {
+  let display = document.getElementById("searchList");
+  display.classList.toggle("HIDE");
+  display.classList.toggle("searchList");
+}

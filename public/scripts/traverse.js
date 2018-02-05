@@ -1,5 +1,8 @@
 //   Main code for client (traverse directory object)
 
+//[globals] *dirty*
+let addTrax = false;
+
 // library.json AJAX
 (function () {
     let xhttp = new XMLHttpRequest();
@@ -7,6 +10,7 @@
         if (this.readyState == 4 && this.status == 200) {
             infiniTree(this);
             loaded4html();
+            filter(this);
         }
     };
     xhttp.open("GET", "library.json", true);
@@ -221,8 +225,6 @@ function infiniTree(json) {
     } clearPlistBtn();
 
     // ADD TraCKs
-    let addTrax = false;
-
     function addList() {
         let btn = document.createElement("BUTTON");
         let t = document.createTextNode("");
