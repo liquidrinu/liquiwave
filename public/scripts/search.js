@@ -17,6 +17,7 @@ function filter(json) {
         else {
             for (let prop in o) {
                 if (prop === "name" && o.type == "file") {
+                    // create new array for searching tracks
                     let name = o[prop];
                     let path = o.path;
                     let extension = o.extension;
@@ -52,13 +53,13 @@ function filter(json) {
             btn.appendChild(t);
             btn.id = "searchIn";
 
-            // hit enter hides mobile device keyboard
+            // hit "enter" (return) hides mobile device keyboard
             form.addEventListener("submit", function (e) {
                 e.preventDefault();
                 document.getElementById("searchIn").blur();
             });
 
-            // add event listener 
+            // regex filter
             btn.addEventListener('keyup', function (e) {
                 let box = document.getElementById('searchList');
                 let tracksArray = [];
@@ -87,21 +88,17 @@ function filter(json) {
                     for (let i = 0; i < 100; i++) {
                         let input = tracksArray[i].name;
                         let element = tracksArray[i];
-
+                        //create html
                         createBtn(input, element, frame);
                     }
-
                 });
-
             }, false);
-
             document.getElementById("data").appendChild(form).appendChild(btn);
         })()
     );
-
-      
+    
+    // html generator
     function createBtn(input, element, frame) {
-        // generic html button creation
         let btn = document.createElement("LI");
         let t = document.createTextNode(input);
         btn.appendChild(t);
@@ -118,7 +115,6 @@ function filter(json) {
                     if (addTrax === false) {
                         //socket.io => play file => vlc
                         socket.emit('message', element.path);
-
                     } else {
                         //socket.io => ADD TO VLC playList
                         socket.emit('message', 'enqueue ' + element.path);
@@ -127,6 +123,5 @@ function filter(json) {
             }
         }, false);
         document.getElementById(frame).appendChild(btn);
-         
     }
 }
