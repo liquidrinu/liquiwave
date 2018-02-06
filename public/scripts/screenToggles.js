@@ -20,8 +20,9 @@ function dataSwitch() {
 }
 
 // class list toggle for [searchList]
+/*
 function searchSwitch() {
-  let display = document.getElementById("searchList");
+  let display = document.getElementById("block1");
   display.classList.toggle("HIDE");
   display.classList.toggle("searchList");
-}
+}*/

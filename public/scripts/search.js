@@ -1,4 +1,5 @@
-// requires /library.json
+// requires /library.json" =
+
 function filter(json) {
 
     let o = JSON.parse(json.responseText);
@@ -46,21 +47,16 @@ function filter(json) {
 
     promise.then(
         (function () {
-            let form = document.createElement("FORM");
-            let btn = document.createElement("INPUT");
-
-            let t = document.createTextNode("");
-            btn.appendChild(t);
-            btn.id = "searchIn";
+            let msg = document.getElementById("msg");
 
             // hit "enter" (return) hides mobile device keyboard
-            form.addEventListener("submit", function (e) {
+            sendCmd.addEventListener("submit", function (e) {
                 e.preventDefault();
                 document.getElementById("searchIn").blur();
             });
 
             // regex filter
-            btn.addEventListener('keyup', function (e) {
+            msg.addEventListener('keyup', function (e) {
                 let box = document.getElementById('searchList');
                 let tracksArray = [];
 
@@ -84,7 +80,7 @@ function filter(json) {
                     // limit search results to 100
                     let outputList = [];
                     let frame = "searchVIEW";
-                
+
                     for (let i = 0; i < 100; i++) {
                         let input = tracksArray[i].name;
                         let element = tracksArray[i];
@@ -93,10 +89,11 @@ function filter(json) {
                     }
                 });
             }, false);
-            document.getElementById("data").appendChild(form).appendChild(btn);
+            //document.getElementById("data").appendChild(form).appendChild(btn);
         })()
+
     );
-    
+
     // html generator
     function createBtn(input, element, frame) {
         let btn = document.createElement("LI");
@@ -124,4 +121,70 @@ function filter(json) {
         }, false);
         document.getElementById(frame).appendChild(btn);
     }
+
+    //search bar switch (double tap)
+    function searchList() {
+        let btn = document.getElementById('searchFile');
+        let toggle = false;
+
+        btn.addEventListener('click',
+            function touchStart() {
+                let display = document.getElementById("searchList");
+                display.classList.toggle("HIDE");
+                display.classList.toggle("searchList");
+
+                if (toggle === false) {
+                    btn.style.borderColor = "yellow";
+                    //setter
+                    toggle = true;
+                } else {
+                    btn.style.borderColor = "darkorchid";
+                    //setter
+                    toggle = false;
+                }
+            }, false);
+    } searchList();
 }
+
+//sketch  
+
+    /*
+        function search_toggle() {
+            let toggle = false;
+            let btn = document.getElementById('sendCmd');
+    
+            // add touch event (tappy.js)
+            let clickTimer = null;
+    
+            btn.addEventListener('click',
+                function touchStart() {
+    
+                    if (clickTimer === null) {
+                        clickTimer = setTimeout(function () {
+                            clickTimer = null;
+                        }, 500);
+                    } else {
+                        clearTimeout(clickTimer);
+                        let display = document.getElementById("searchList");
+    
+                        display.classList.toggle("HIDE");
+                        display.classList.toggle("searchList");
+    
+                        if (toggle === false) {
+                            btn.innerHTML = "Search";
+                            btn.style.borderColor = "yellow";
+                            document.getElementById('msgBox').setAttribute('data', "search");
+                            //setters
+                            clickTimer = null;
+                            toggle = true;
+                        } else {
+                            btn.innerHTML = "Send";
+                            btn.style.borderColor = "darkorchid";
+                            document.getElementById('msgBox').setAttribute('data', "commands");
+                            //setters
+                            toggle = false;
+                        }
+                    }
+                }, false);
+        }
+        //search_toggle(); */

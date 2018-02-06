@@ -217,7 +217,7 @@ function infiniTree(json) {
                     clearTimeout(clickTimer);
                     //alert("double");
                     socket.emit('message', 'clear');
-                    location.reload();
+                    //location.reload();
                 }
             }, false);
 

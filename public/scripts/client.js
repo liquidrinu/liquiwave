@@ -1,12 +1,16 @@
 // client script to emit messages through socket.io
 const socket = io();
 
-function sendMsg() {
+//prevent form input element from reloading
+document.getElementById("msgBox").addEventListener("submit", function (e) {
+  e.preventDefault();
+  document.getElementById("msg").blur();
   let y = document.getElementById('msg');
   let z = y.value;
   socket.emit('message', z);
   document.getElementById('msg').value = "";
-}
+});
+
 
 // media control buttons for vlc
 function buttonPlay() {
@@ -27,10 +31,10 @@ function buttonNormalizeVolume() {
   let xhttp = new XMLHttpRequest();
   xhttp.onreadystatechange = function () {
     if (this.readyState === 4 && this.status === 200) {
-       statXml(this);
+      statXml(this);
     }
   };
-  
+
   xhttp.open("GET", "/status.xml", true);
   xhttp.overrideMimeType('text/html');
   xhttp.send();

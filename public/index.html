@@ -23,7 +23,7 @@
     <div id="options">
       <div id="block1">
         <!-- <button onclick="location.href = 'http://192.168.1.14:7007/proc'">(ง’̀-‘́)ง</button> -->
-        <button id="searchFile" onclick="searchSwitch()">Search</button>
+        <button id="searchFile">Search</button>
       </div>
       <div id="block2">
         <button>loadin'</button>
@@ -83,11 +83,12 @@
           <button onclick="buttonVolup()">vol +5</button>
         </div>
       </div>
-      <div id="msgBox">
+      <form id="msgBox" data="commands">
         <input id="msg" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
-        <button onclick="sendMsg()">Send</button>
+        <button id="sendCmd">Send</button>
+        <!--onclick="sendMsg()" -->
         <label for="Player commands"></label>
-      </div>
+      </form>
     </div>
   </div>
 
