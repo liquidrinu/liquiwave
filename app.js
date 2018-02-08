@@ -13,15 +13,10 @@ console.log("Server listening at port: " + port + "\n");
 const vlc = require('./player/vlc.js');
 
 app.use(express.static('public'));
-app.use(express.static('PROC'));
+//app.use(express.static('PROC'));
 
 app.get('/', function (req, res) {
   res.sendFile(__dirname + '/public/index.html');
-});
-
-// (under construction)
-app.get('/proc', function (req, res) {
-  res.sendFile(__dirname + '/PROC/index.html');
 });
 
 // client control messages for VLC
@@ -32,10 +27,20 @@ io.on('connection', function (socket) {
   });
 });
 
-// uncomment below to check connections
-io.on('connection', function (socket) {
-  //console.log('a user connected');
-  socket.on('disconnect', function () {
-    //console.log(' user disconnected..');
-  });
+
+/*
+// (under construction)
+app.get('/proc', function (req, res) {
+  res.sendFile(__dirname + '/PROC/index.html');
 });
+
+var parseString = require('xml2js').parseString;
+var fs = require('fs');
+
+fs.readFile('public/status.xml', 'utf8', function (err, contents) {
+  //parseString(contents, function (err, result) {
+  io.socket.emit('vlc', contents);
+  //console.log(result);
+  //});
+});
+*/

@@ -3,19 +3,28 @@
 //[globals] *dirty*
 let addTrax = false;
 
-// library.json AJAX
 (function () {
     let xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function () {
-        if (this.readyState == 4 && this.status == 200) {
+        if (this.readyState === 4 && this.status === 200) {
             infiniTree(this);
             loaded4html();
             filter(this);
         }
     };
-    xhttp.open("GET", "library.json", true);
+
+    xhttp.open("GET", "/library.json", true);
+    //xhttp.overrideMimeType('text/html');
     xhttp.send();
 })();
+
+/*
+// library.json 
+socket.on('datas', function (data) {
+  infiniTree(data);
+  loaded4html();
+  filter(data);
+}); */
 
 function loaded4html() {
     (function () {
@@ -52,8 +61,8 @@ function runOnce() {
 
 // executed when ajax has loaded
 function infiniTree(json) {
-
-    let obj = JSON.parse(json.responseText);
+   
+    let obj = JSON.parse(json.responseText); //AJAX
     let path = []; // playlists for path location
     let node = []; // playlists for object recursion;
 
@@ -118,10 +127,10 @@ function infiniTree(json) {
     // Helper functions below
     function assignElement(element) {
         if (element.type === "directory") {
-            let dir = "dir  " + element.name;
+            let dir = element.name;
             createBtn(dir, element);
         } else {
-            let file = "file " + element.name;
+            let file = element.name;
             createBtn(file, element);
         }
     }
@@ -130,10 +139,20 @@ function infiniTree(json) {
     function createBtn(input, element) {
 
         // generic html button creation
+        let div = document.createElement("DIV");
         let btn = document.createElement("LI");
         let t = document.createTextNode(input);
         btn.appendChild(t);
-        btn.setAttribute('data', element.name);
+        div.setAttribute('data', element.type);
+
+        if (element.type === "file") {
+            mNote = document.createTextNode("♫");
+            div.appendChild(mNote);
+        } else {
+            mNote = document.createTextNode("📁");
+            div.style.color = "brown";
+            div.appendChild(mNote);
+        }
 
         // add event listener to get data and execute traverse again
         btn.addEventListener('click', function () {
@@ -166,6 +185,7 @@ function infiniTree(json) {
                 traverse(path, node);
             }
         }, false);
+        document.getElementById("playlists").appendChild(div);
         document.getElementById("playlists").appendChild(btn);
     }
 
@@ -252,7 +272,7 @@ function infiniTree(json) {
                 this.setAttribute('data', "off");
                 this.innerHTML = "ADD <br>" + "off";
                 this.style.color = "";
-                this.style.borderColor = "rgb(119, 18, 202)";
+                this.style.borderColor = "";
             }
         }, false);
 

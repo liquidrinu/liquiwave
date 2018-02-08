@@ -2,7 +2,9 @@
 
 function filter(json) {
 
-    let o = JSON.parse(json.responseText);
+    let o = JSON.parse(json.responseText); //AJAX
+    //let o = json;
+
     let array = [];
 
     function getObject(o) {
@@ -57,29 +59,41 @@ function filter(json) {
 
             // regex filter
             msg.addEventListener('keyup', function (e) {
+
                 let box = document.getElementById('searchList');
                 let tracksArray = [];
 
                 let stringInput = "" + this.value;
                 let regex = new RegExp(stringInput, 'gi');
 
+                if (this.value.length < 0) {
+                    box.innerHTML = "";
+                }
+
                 let promiseList = new Promise(function (resolve, reject) {
                     for (let i = 0; i < array.length; i++) {
-                        const name = array[i].name;
-                        const path = array[i].path;
-                        const ext = array[i].extension;
-                        if (name.match(regex)) {
-                            tracksArray.push({ "name": name, "path": path, "extension": ext });
+                        //filter audio
+                        for (let f = 0; f < opts.playFormat.length; f++) {
+                            const audioExtension = opts.playFormat[f];
+                            //create new single level array
+                            if (array[i].extension.toLowerCase() === audioExtension) {
+                                const name = array[i].name;
+                                const path = array[i].path;
+                                const ext = array[i].extension;
+                                if (name.match(regex)) {
+                                    tracksArray.push({ "name": name, "path": path, "extension": ext });
+                                }
+                            }
                         }
                     }
                     resolve(tracksArray);
                 });
 
                 promiseList.then(function () {
-                    document.getElementById("searchVIEW").innerHTML = "";
+                    document.getElementById("searchList").innerHTML = "";
                     // limit search results to 100
                     let outputList = [];
-                    let frame = "searchVIEW";
+                    let frame = "searchList";
 
                     for (let i = 0; i < 100; i++) {
                         let input = tracksArray[i].name;
@@ -89,17 +103,21 @@ function filter(json) {
                     }
                 });
             }, false);
-            //document.getElementById("data").appendChild(form).appendChild(btn);
         })()
-
     );
 
     // html generator
     function createBtn(input, element, frame) {
+
+        // generic html button creation
+        let div = document.createElement("DIV")
         let btn = document.createElement("LI");
         let t = document.createTextNode(input);
         btn.appendChild(t);
-        btn.setAttribute('data', element.name);
+        div.setAttribute('data', element.type);
+
+        var mNote = document.createTextNode("♫");
+        div.appendChild(mNote);
 
         // add event listener
         btn.addEventListener('click', function () {
@@ -119,7 +137,8 @@ function filter(json) {
                 }
             }
         }, false);
-        document.getElementById(frame).appendChild(btn);
+        document.getElementById("searchList").appendChild(div);
+        document.getElementById("searchList").appendChild(btn);
     }
 
     //search bar switch (double tap)
@@ -131,14 +150,16 @@ function filter(json) {
             function touchStart() {
                 let display = document.getElementById("searchList");
                 display.classList.toggle("HIDE");
-                display.classList.toggle("searchList");
+               // display.classList.toggle("searchList");
 
                 if (toggle === false) {
                     btn.style.borderColor = "yellow";
+                    btn.style.color = "yellow"
                     //setter
                     toggle = true;
                 } else {
-                    btn.style.borderColor = "darkorchid";
+                    btn.style.borderColor = "";
+                    btn.style.color = "";
                     //setter
                     toggle = false;
                 }

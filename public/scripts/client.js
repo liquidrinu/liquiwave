@@ -11,7 +11,6 @@ document.getElementById("msgBox").addEventListener("submit", function (e) {
   document.getElementById('msg').value = "";
 });
 
-
 // media control buttons for vlc
 function buttonPlay() {
   socket.emit('message', 'pause');
@@ -39,7 +38,7 @@ function buttonNormalizeVolume() {
   xhttp.overrideMimeType('text/html');
   xhttp.send();
 
-  setTimeout(ajaxFn, 50);
+  setTimeout(ajaxFn, 120);
 })();
 
 // XML Processing, parsing parameters and placing them in divs

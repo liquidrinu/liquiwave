@@ -16,38 +16,43 @@
 </head>
 
 <body>
+
   <div id="container">
-    <div id="nav">
-      <div>Liquiwave</div>
+
+    <div id="header">
+      <div id="app">
+        <div>
+          <button>Liquiwave</button>
+        </div>
+      </div>
     </div>
+
     <div id="options">
       <div id="block5">
         <button>[Config]</button>
       </div>
-      <div id="block1">
-        <!-- <button onclick="location.href = 'http://192.168.1.14:7007/proc'">(ง’̀-‘́)ง</button> -->
-        <button id="searchFile">Search</button>
+      <div id="block3">
+        <button>loadin'</button>
       </div>
       <div id="block2">
         <button>loadin'</button>
       </div>
-      <div id="block3">
-        <button>loadin'</button>
+      <div id="block1">
+        <button id="searchFile">Search</button>
       </div>
       <div id="block4">
-        <button>~(˘▾˘~)</button>
+        <button> ☕</button>
       </div>
 
     </div>
 
     <div id="data">
 
-      <div id="playlists" class="HIDE vertical-menu">
-      </div>
+      <ul id="playlists" class="HIDE vertical-menu">
+      </ul>
 
-      <div id="searchList" class="HIDE vertical-menu">
-        <div id="searchVIEW"></div>
-      </div>
+      <ul id="searchList" class="HIDE vertical-menu">
+      </ul>
 
       <div id="dataCenter">
         <div id="droplet">
@@ -68,6 +73,7 @@
       </div>
 
     </div>
+
     <div id="ui">
       <div id="controls">
         <div>
@@ -96,12 +102,12 @@
     </div>
   </div>
 
-  <!-- scripts -->
-  <script src="scripts/traverse.js"></script>
   <!-- Libraries -->
   <script src="/socket.io/socket.io.js"></script>
   <!-- scripts -->
   <script src="scripts/client.js"></script>
+  <script src="scripts/traverse.js"></script>
+
   <script src="scripts/screenToggles.js"></script>
   <script src="scripts/search.js"></script>
 
