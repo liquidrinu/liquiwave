@@ -6,6 +6,6 @@ public/status.xml
 node_modules/
 package-lock.json
 PROC/
-
+extensions/
 #under construction
 .travis.yml

@@ -1,51 +1,42 @@
-// requires /library.json" =
+
+var array = [];
+
 
 function filter(json) {
 
     let o = JSON.parse(json.responseText); //AJAX
-    //let o = json;
-
-    let array = [];
-
-    function getObject(o) {
-        let result = null;
-        if (o instanceof Array) {
-            for (let i = 0; i < o.length; i++) {
-                result = getObject(o[i]);
-                if (result) {
-                    break;
-                }
-            }
-        }
-        else {
-            for (let prop in o) {
-                if (prop === "name" && o.type == "file") {
-                    // create new array for searching tracks
-                    let name = o[prop];
-                    let path = o.path;
-                    let extension = o.extension;
-                    array.push({ "name": name, "path": path, "extension": extension });
-                }
-                if (prop == 'id') {
-                    if (o[prop] == 1) {
-                        return o;
-                    }
-                }
-                if (o[prop] instanceof Object || o[prop] instanceof Array) {
-                    result = getObject(o[prop]);
-                    if (result) {
-                        break;
-                    }
-                }
-            }
-        }
-        return result;
-    }
 
     let promise = new Promise(function (resolve, reject) {
         getObject(o);
         resolve(array);
     });
+
+    // Random trax
+    promise.then(function () {
+        setInterval(() => {
+            let time = document.getElementById('time').innerHTML;
+            let re = /\/\s00:00:00/;
+            let ranArray = [];
+
+            if (randomTrax && time.match(re)) {
+
+                for (let i = 0; i < array.length; i++) {
+                    for (let f = 0; f < opts.playFormat.length; f++) {
+                        const audioExtension = opts.playFormat[f];
+                        if (array[i].extension.toLowerCase() === audioExtension) {
+                            let element = array[i].path;
+                            ranArray.push(element);
+                        }
+                    }
+                }
+
+                var item = [Math.floor(Math.random() * ranArray.length)];
+                socket.emit('message', ranArray[item]);
+            }
+
+        }, 40);
+    });
+
 
     promise.then(
         (function () {
@@ -110,7 +101,7 @@ function filter(json) {
     function createBtn(input, element, frame) {
 
         // generic html button creation
-        let div = document.createElement("DIV")
+        let div = document.createElement("DIV");
         let btn = document.createElement("LI");
         let t = document.createTextNode(input);
         btn.appendChild(t);
@@ -150,11 +141,11 @@ function filter(json) {
             function touchStart() {
                 let display = document.getElementById("searchList");
                 display.classList.toggle("HIDE");
-               // display.classList.toggle("searchList");
+                // display.classList.toggle("searchList");
 
                 if (toggle === false) {
                     btn.style.borderColor = "yellow";
-                    btn.style.color = "yellow"
+                    btn.style.color = "yellow";
                     //setter
                     toggle = true;
                 } else {
@@ -167,45 +158,37 @@ function filter(json) {
     } searchList();
 }
 
-//sketch  
-
-    /*
-        function search_toggle() {
-            let toggle = false;
-            let btn = document.getElementById('sendCmd');
-    
-            // add touch event (tappy.js)
-            let clickTimer = null;
-    
-            btn.addEventListener('click',
-                function touchStart() {
-    
-                    if (clickTimer === null) {
-                        clickTimer = setTimeout(function () {
-                            clickTimer = null;
-                        }, 500);
-                    } else {
-                        clearTimeout(clickTimer);
-                        let display = document.getElementById("searchList");
-    
-                        display.classList.toggle("HIDE");
-                        display.classList.toggle("searchList");
-    
-                        if (toggle === false) {
-                            btn.innerHTML = "Search";
-                            btn.style.borderColor = "yellow";
-                            document.getElementById('msgBox').setAttribute('data', "search");
-                            //setters
-                            clickTimer = null;
-                            toggle = true;
-                        } else {
-                            btn.innerHTML = "Send";
-                            btn.style.borderColor = "darkorchid";
-                            document.getElementById('msgBox').setAttribute('data', "commands");
-                            //setters
-                            toggle = false;
-                        }
-                    }
-                }, false);
+function getObject(o) {
+    let result = null;
+    if (o instanceof Array) {
+        for (let i = 0; i < o.length; i++) {
+            result = getObject(o[i]);
+            if (result) {
+                break;
+            }
         }
-        //search_toggle(); */
+    }
+    else {
+        for (let prop in o) {
+            if (prop === "name" && o.type == "file") {
+                // create new array for searching tracks
+                let name = o[prop];
+                let path = o.path;
+                let extension = o.extension;
+                array.push({ "name": name, "path": path, "extension": extension });
+            }
+            if (prop == 'id') {
+                if (o[prop] == 1) {
+                    return o;
+                }
+            }
+            if (o[prop] instanceof Object || o[prop] instanceof Array) {
+                result = getObject(o[prop]);
+                if (result) {
+                    break;
+                }
+            }
+        }
+    }
+    return result;
+}

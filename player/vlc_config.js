@@ -2,9 +2,9 @@ module.exports = function (vlcPort, vlcPasswd) {
 
     // vlc command [args]
     const args1 = [
-        '-I', 'rc',
+        '-I', 'rc', 
         '--no-video',
-        '--preferred-resolution', '720',
+        '--preferred-resolution', '480',
         '--extraintf', 'http', '--http-port', vlcPort,
         '--http-password', vlcPasswd, 
     ];
@@ -17,13 +17,15 @@ module.exports = function (vlcPort, vlcPasswd) {
         //cache options
         '--file-caching=5500',
         '--live-caching=5500',
-        '--network-caching=8500'
+        
+        //'--network-caching=12500'
         //'--http-caching=9000',  <-- deprecated??
         //'--http-reconnect', '1',
     ];
 
     const argsExperimental = [
-        //'--no-playlist-autostart',  
+        //'--no-playlist-autostart', 
+        //'-v',  
     ];
 
     let opts = args1.concat(args2, argsExperimental);

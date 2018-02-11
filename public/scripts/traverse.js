@@ -1,30 +1,26 @@
 //   Main code for client (traverse directory object)
 
 //[globals] *dirty*
+// setters
+let randomTrax = false;
 let addTrax = false;
+let menuView = false;
 
 (function () {
     let xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function () {
-        if (this.readyState === 4 && this.status === 200) {
+        if (this.readyState == 4 && this.status == 200) {
             infiniTree(this);
             loaded4html();
             filter(this);
         }
     };
 
-    xhttp.open("GET", "/library.json", true);
-    //xhttp.overrideMimeType('text/html');
+    xhttp.open("GET", "library.json", true);
+    xhttp.overrideMimeType('text/html');
     xhttp.send();
 })();
 
-/*
-// library.json 
-socket.on('datas', function (data) {
-  infiniTree(data);
-  loaded4html();
-  filter(data);
-}); */
 
 function loaded4html() {
     (function () {
@@ -61,7 +57,7 @@ function runOnce() {
 
 // executed when ajax has loaded
 function infiniTree(json) {
-   
+
     let obj = JSON.parse(json.responseText); //AJAX
     let path = []; // playlists for path location
     let node = []; // playlists for object recursion;
@@ -70,6 +66,13 @@ function infiniTree(json) {
         storage();
         return null;
     };
+
+
+    // * hacky reset*
+    //localStorage.setItem("path_LS", []);
+    //localStorage.setItem("node_LS", []);
+    //localStorage.setItem("loadScroll", ""); 
+
 
     function storage() {
         let a = JSON.stringify(path);
@@ -278,4 +281,40 @@ function infiniTree(json) {
 
         document.getElementById("block3").appendChild(btn);
     } addList();
+
+    // randomizer button
+    function ranDom() {
+        let btn = document.createElement("BUTTON");
+        let t = document.createTextNode("");
+        btn.innerHTML = "Random \n" + "off";
+        btn.appendChild(t);
+        btn.setAttribute('data', "off");
+        // remove elemnt
+        document.getElementById("block5").innerHTML = "";
+
+        // add event listener to get data and execute traverse again
+        btn.addEventListener('click', function () {
+            let data = this.getAttribute('data');
+            if (data === "off") {
+                // setter
+                randomTrax = true;
+                // style
+                this.setAttribute('data', "on");
+                this.innerHTML = "Random \n" + "on";
+                this.style.color = "pink";
+                this.style.borderColor = "pink";
+            } else {
+                // setter
+                randomTrax = false;
+                // style
+                this.setAttribute('data', "off");
+                this.innerHTML = "Random \n" + "off";
+                this.style.color = "";
+                this.style.borderColor = "";
+            }
+        }, false);
+
+        document.getElementById("block5").appendChild(btn);
+    } ranDom();
 } 
+

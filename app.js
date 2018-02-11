@@ -4,13 +4,16 @@ const server = require('http').Server(app);
 const io = require('socket.io')(server);
 
 // insert port here, server will run on local host
-const port = 3000;
+const port = 7007;
 
 server.listen(port);
 console.log("Server listening at port: " + port + "\n");
 
 // VLC process source
 const vlc = require('./player/vlc.js');
+
+// State Information
+const state = require('./config/state.js');
 
 app.use(express.static('public'));
 //app.use(express.static('PROC'));
@@ -19,7 +22,7 @@ app.get('/', function (req, res) {
   res.sendFile(__dirname + '/public/index.html');
 });
 
-// client control messages for VLC
+// client control messages for  VLC
 io.on('connection', function (socket) {
   socket.on('message', function (msg) {
     vlc.control(msg);
@@ -27,20 +30,17 @@ io.on('connection', function (socket) {
   });
 });
 
+//state
+const treeReload = require("./tree");
 
-/*
-// (under construction)
-app.get('/proc', function (req, res) {
-  res.sendFile(__dirname + '/PROC/index.html');
+io.on('connection', function (socket) {
+  socket.on('message', function (msg) {
+    if (/\/home/.test(msg)) {
+      socket.emit('state', msg);
+    }
+    if (/\!tree/.test(msg)) {
+      treeReload();
+    }
+  });
 });
 
-var parseString = require('xml2js').parseString;
-var fs = require('fs');
-
-fs.readFile('public/status.xml', 'utf8', function (err, contents) {
-  //parseString(contents, function (err, result) {
-  io.socket.emit('vlc', contents);
-  //console.log(result);
-  //});
-});
-*/
