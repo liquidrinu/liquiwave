@@ -15,12 +15,10 @@ let menuView = false;
             filter(this);
         }
     };
-
     xhttp.open("GET", "library.json", true);
     xhttp.overrideMimeType('text/html');
     xhttp.send();
 })();
-
 
 function loaded4html() {
     (function () {
@@ -55,7 +53,7 @@ function runOnce() {
     }
 }
 
-// executed when ajax has loaded
+// executed when ajax has loaded (main traversal Fn)
 function infiniTree(json) {
 
     let obj = JSON.parse(json.responseText); //AJAX
