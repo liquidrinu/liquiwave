@@ -59,8 +59,8 @@ function runOnce() {
 function infiniTree(json) {
 
     let obj = JSON.parse(json.responseText); //AJAX
-    let path = []; // playlists for path location
-    let node = []; // playlists for object recursion;
+    let path = []; // path location history
+    let node = []; // parralel object location
 
     window.onbeforeunload = function () {
         storage();
@@ -163,7 +163,7 @@ function infiniTree(json) {
 
             // FILES
             if (element.type == "file") {
-
+                
                 // check format
                 for (let i = 0; i < opts.playFormat.length; i++) {
                     const audioExtension = opts.playFormat[i];
@@ -217,7 +217,7 @@ function infiniTree(json) {
         document.getElementById("block4").appendChild(btn);
     }
 
-    //playlist CLEAR (double touch)
+    //playlist CLEAR (double tap)
     function clearPlistBtn() {
         let btn = document.createElement("BUTTON");
         let t = document.createTextNode("Clear Plist");
@@ -226,7 +226,7 @@ function infiniTree(json) {
         //remove element
         document.getElementById("block2").innerHTML = "";
 
-        // add touch event (tappy.js)
+        // add touch event
         let clickTimer = null;
 
         btn.addEventListener('click',
@@ -247,7 +247,7 @@ function infiniTree(json) {
         document.getElementById("block2").appendChild(btn);
     } clearPlistBtn();
 
-    // ADD TraCKs
+    // add tracks
     function addList() {
         let btn = document.createElement("BUTTON");
         let t = document.createTextNode("");
@@ -317,4 +317,3 @@ function infiniTree(json) {
         document.getElementById("block5").appendChild(btn);
     } ranDom();
 } 
-
