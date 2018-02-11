@@ -1,6 +1,5 @@
-
+// TrackSearch Fn + randomizer Fn
 var array = [];
-
 
 function filter(json) {
 
@@ -29,15 +28,13 @@ function filter(json) {
                         }
                     }
                 }
-
                 var item = [Math.floor(Math.random() * ranArray.length)];
                 socket.emit('message', ranArray[item]);
             }
-
-        }, 40);
+        }, 10);
     });
 
-
+    // Search Fn
     promise.then(
         (function () {
             let msg = document.getElementById("msg");
@@ -68,9 +65,9 @@ function filter(json) {
                             const audioExtension = opts.playFormat[f];
                             //create new single level array
                             if (array[i].extension.toLowerCase() === audioExtension) {
-                                const name = array[i].name;
-                                const path = array[i].path;
-                                const ext = array[i].extension;
+                                let name = array[i].name;
+                                let path = array[i].path;
+                                let ext = array[i].extension;
                                 if (name.match(regex)) {
                                     tracksArray.push({ "name": name, "path": path, "extension": ext });
                                 }
@@ -97,7 +94,7 @@ function filter(json) {
         })()
     );
 
-    // html generator
+    // html generator for Search Fn
     function createBtn(input, element, frame) {
 
         // generic html button creation
@@ -132,7 +129,7 @@ function filter(json) {
         document.getElementById("searchList").appendChild(btn);
     }
 
-    //search bar switch (double tap)
+    //search bar switch
     function searchList() {
         let btn = document.getElementById('searchFile');
         let toggle = false;
@@ -158,6 +155,7 @@ function filter(json) {
     } searchList();
 }
 
+// create flat array with file objects
 function getObject(o) {
     let result = null;
     if (o instanceof Array) {
