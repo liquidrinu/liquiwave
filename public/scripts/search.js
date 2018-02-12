@@ -34,7 +34,7 @@ function filter(json) {
                 socket.emit('message', ranArray[item]);
             }
 
-        }, 40);
+        }, 20);
     });
 
 

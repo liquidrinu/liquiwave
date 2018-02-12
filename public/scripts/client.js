@@ -143,29 +143,24 @@ function statXml(xml) {
   (function () {
     let xmlUrl = document.getElementById('url').innerHTML,
       p1 = /https:\/\/www.youtube.com\/watch\?v=/i,
-      p2 = /https:\/\/youtu.be\//i;
-    //artUrl = "";
+      p2 = /https:\/\/youtu.be\//i,
+      artUrl = "";
 
     //regex for youtube ART (under construction)
     if (p1.test(xmlUrl)) {
       newUrl = xmlUrl.replace(p1, "");
-    } else {
+    } else if (p1.test(xmlUrl)) {
       newUrl = xmlUrl.replace(p2, "");
     }
-    artUrl = 'https://img.youtube.com/vi/' + newUrl + '/0.jpg';
 
+    artUrl = 'https://img.youtube.com/vi/' + newUrl + '/0.jpg';
 
     //local artwork 
     if (state[0] && rootTag !== 'undefined') {
       document.getElementById('art_img').src = "icon.png";
       if (state[0].innerHTML !== 'stopped' && time !== 0) {
-        if (p1.test(xmlUrl) || p2.test(xmlUrl)) {
+        if (artUrl) {
           document.getElementById('art_img').src = artUrl;
-        } else if (!p1.test(xmlUrl)) {
-
-
-          ////////////////////////////////////////////
-
         } else {
           document.getElementById('art_img').src = "icon.png";
         }
