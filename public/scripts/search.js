@@ -31,12 +31,7 @@ function filter(json) {
                 var item = [Math.floor(Math.random() * ranArray.length)];
                 socket.emit('message', ranArray[item]);
             }
-<<<<<<< HEAD
-
-        }, 20);
-=======
         }, 10);
->>>>>>> f35e2eb1b787ab33c89b07fab8b07911d7d8453f
     });
 
     // Search Fn
@@ -44,7 +39,7 @@ function filter(json) {
         (function () {
             let msg = document.getElementById("msg");
 
-            // hit "enter" (return) hides mobile device keyboard
+            // hit "enter" (return) hides m obile device keyboard
             sendCmd.addEventListener("submit", function (e) {
                 e.preventDefault();
                 document.getElementById("searchIn").blur();
