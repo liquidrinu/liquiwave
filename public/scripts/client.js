@@ -122,10 +122,13 @@ function statXml(xml) {
         document.getElementById('title').innerHTML = array[i].innerHTML;
       }
       if (element == "artist") {
+        let element = array[i].innerHTML;
         document.getElementById('artist').innerHTML = "by: " + array[i].innerHTML;
       }
       if (element == "url") {
-        document.getElementById('url').innerHTML = array[i].innerHTML;
+        // split long urls
+        let element = array[i].innerHTML.split('&').shift();
+        document.getElementById('url').innerHTML = element;
       }
       if (element == "artwork_url") {
         // let q = "http://localhost:7007/artwork.png?random=" + new Date().getTime();
@@ -148,9 +151,10 @@ function statXml(xml) {
 
     //regex for youtube ART (under construction)
     if (p1.test(xmlUrl)) {
-      newUrl = xmlUrl.replace(p1, "");
+      //newUrl = xmlUrl.replace(p1, "");
+      newUrl = xmlUrl.split("v=").pop().split('&').shift();
     } else if (p1.test(xmlUrl)) {
-      newUrl = xmlUrl.replace(p2, "");
+      newUrl = xmlUrl.split("v=").pop().split('&').shift();
     }
 
     artUrl = 'https://img.youtube.com/vi/' + newUrl + '/0.jpg';
