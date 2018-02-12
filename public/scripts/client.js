@@ -147,7 +147,8 @@ function statXml(xml) {
     let xmlUrl = document.getElementById('url').innerHTML,
       p1 = /https:\/\/www.youtube.com\/watch\?v=/i,
       p2 = /https:\/\/youtu.be\//i,
-      artUrl = "";
+      artUrl = "",
+      newUrl = "";
 
     //regex for youtube ART (under construction)
     if (p1.test(xmlUrl)) {
