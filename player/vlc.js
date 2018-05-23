@@ -3,7 +3,7 @@ const { spawn } = require('child_process');
 
 // vlc [credentials]
 const vlcPort = 5555;
-const vlcPasswd = 'bierie';
+const vlcPasswd = 'secret';
 
 // vlc [args]
 const opts = require('./vlc_config')(vlcPort, vlcPasswd);
