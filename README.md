@@ -1,3 +1,5 @@
+### important! this repo is unmaintained
+
 # liquiwave
 Need to have installed:
 - Debian v8.0-v9.0
