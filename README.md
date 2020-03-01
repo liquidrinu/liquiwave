@@ -1,5 +1,7 @@
 ### important! this repo is unmaintained
 
+![Image description](https://github.com/liquidrinu/liquiwave/blob/master/lwave.png)
+
 # liquiwave
 Need to have installed:
 - Debian v8.0-v9.0
